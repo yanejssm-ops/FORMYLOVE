@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Jaya 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  height:100vh;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at top,#ff8fcf,#5b1b5f 45%,#120018);
+  font-family:'Poppins',sans-serif;
+  color:#fff;
+}
+
+/* PAGE SYSTEM */
+.page{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  transform:translateY(40px) scale(.96);
+  transition:1s ease;
+  pointer-events:none;
+}
+.page.active{
+  opacity:1;
+  transform:none;
+  pointer-events:auto;
+}
+
+/* CARDS */
+.card{
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(20px);
+  border-radius:32px;
+  padding:42px 36px;
+  max-width:460px;
+  text-align:center;
+  box-shadow:0 0 90px rgba(255,105,180,.35);
+}
+
+h1{
+  font-family:'Playfair Display',serif;
+  font-size:2.5rem;
+  margin-bottom:18px;
+}
+
+p{
+  font-size:1.1rem;
+  line-height:2;
+}
+
+/* BUTTONS */
+button{
+  margin-top:26px;
+  padding:14px 36px;
+  border-radius:50px;
+  border:none;
+  background:linear-gradient(135deg,#ff5fa2,#ff87b7);
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.3s;
+}
+button:hover{transform:scale(1.08)}
+
+.no-btn{
+  background:#aaa;
+  margin-left:10px;
+}
+
+/* 💍 VALENTINE SLIDE */
+.valentine{
+  background:radial-gradient(circle,#ffd1e8,#ff6fae);
+  color:#4a0f2e;
+  box-shadow:0 0 150px rgba(255,105,180,.9);
+}
+.valentine h1{font-size:2.8rem}
+.heart{
+  font-size:4rem;
+  animation:pulse 1.3s infinite alternate;
+}
+@keyframes pulse{to{transform:scale(1.35)}}
+
+/* ✍️ HANDWRITTEN LETTER */
+.letter{
+  background:#fffafc;
+  color:#4a0f2e;
+  border-radius:22px;
+  padding:40px 36px;
+  max-width:520px;
+  box-shadow:
+    0 0 50px rgba(255,182,193,.6),
+    inset 0 0 30px rgba(255,192,203,.25);
+  font-family:'Dancing Script',cursive;
+  font-size:1.3rem;
+  line-height:2.3;
+  animation:fadeIn 1.8s ease forwards;
+}
+
+.letter h1{
+  font-family:'Dancing Script',cursive;
+  font-size:2.8rem;
+  margin-bottom:18px;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+
+/* 🎆 FIREWORKS */
+.firework{
+  position:absolute;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  animation:explode 1.2s ease-out forwards;
+}
+@keyframes explode{
+  to{
+    transform:translate(var(--x),var(--y)) scale(0);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- START -->
+<div class="page active">
+  <div class="card">
+    <h1>Hey… 🤍</h1>
+    <p>
+      Before I tell you anything,<br>
+      just stay here with me for a moment.
+    </p>
+    <button onclick="next()">Here we go ✨</button>
+  </div>
+</div>
+
+<div class="page">
+  <div class="card">
+    <p>
+      Loving you from a distance<br>
+      means missing you in quiet ways.<br><br>
+      In songs. In nights.<br>
+      In moments I wish you were here for.
+    </p>
+    <button onclick="next()">Next</button>
+  </div>
+</div>
+
+<div class="page">
+  <div class="card">
+    <p>
+      Different places.<br>
+      Different routines.<br><br>
+      But every single day,<br>
+      I still choose you.
+    </p>
+    <button onclick="next()">Next</button>
+  </div>
+</div>
+
+<!-- VALENTINE -->
+<div class="page">
+  <div class="card valentine">
+    <div class="heart">💖</div>
+    <h1>So my love…</h1>
+    <p>
+      Even with miles between us,<br>
+      even with waiting and missing…<br><br>
+      will you be my Valentine?
+    </p>
+    <button onclick="yes()">Yes ❤️</button>
+    <button class="no-btn" onmouseover="tease(this)">No 🙈</button>
+  </div>
+</div>
+
+<div class="page">
+  <div class="card">
+    <h1>You said YES 💖</h1>
+    <p>
+      And suddenly,<br>
+      the whole world feels brighter.
+    </p>
+    <button onclick="next()">Read my letter 🤍</button>
+  </div>
+</div>
+
+<!-- 💌 FINAL LETTER -->
+<div class="page">
+  <div class="letter">
+    <h1>My Love 🤍</h1>
+    <p>
+      I just want you to know how special you are to me.
+      Every little thing about you — the way you smile,
+      the way you care, the way you make my heart feel at home —
+      means the world.
+      <br><br>
+      Being with you feels like the most beautiful dream
+      I never want to wake up from.
+      You make even the simplest moments magical,
+      and I can’t imagine my life without you.
+      <br><br>
+      I promise to always treat you the way you want to be treated,
+      to listen, to care, and to make you feel loved every single day.
+      <br><br>
+      You’re not just my girl —
+      you’re my world, my peace, my joy.
+      And no matter what,
+      I’ll always be here,
+      holding your heart with mine. 💞
+    </p>
+    <p style="margin-top:26px;">
+      — <b>Your Boo Boo 🤍</b>
+    </p>
+  </div>
+</div>
+
+<script>
+let current=0;
+const pages=document.querySelectorAll('.page');
+
+function next(){
+  pages[current].classList.remove('active');
+  current++;
+  if(current<pages.length){
+    pages[current].classList.add('active');
+  }
+}
+
+function tease(btn){
+  btn.innerText="hehe say yes 😏";
+  btn.style.transform=
+    `translate(${Math.random()*180-90}px,${Math.random()*90}px)`;
+}
+
+function yes(){
+  fireworks();
+  next();
+}
+
+/* FULL PAGE FIREWORKS */
+function fireworks(){
+  for(let i=0;i<180;i++){
+    const f=document.createElement("div");
+    f.className="firework";
+    f.style.left=Math.random()*100+"vw";
+    f.style.top=Math.random()*100+"vh";
+    f.style.background=`hsl(${Math.random()*360},100%,70%)`;
+    f.style.setProperty("--x",`${Math.random()*600-300}px`);
+    f.style.setProperty("--y",`${Math.random()*600-300}px`);
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),1200);
+  }
+}
+</script>
+
+</body>
+</html>
